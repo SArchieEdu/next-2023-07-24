@@ -8,6 +8,5 @@ export default async function RestaurantPage({ params: { restaurantId } }) {
   const restaurants = await fetchRestaurants();
 
   const restaurant = restaurants.find(({ id }) => id === restaurantId);
-
   return <div className={styles.root}>{restaurant?.name}</div>;
 }
