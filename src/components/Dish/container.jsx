@@ -1,7 +1,9 @@
+"use client"
+
 import { useDispatch, useSelector } from "react-redux";
 import { Dish } from "./component";
-import { selectDishAmountById } from "../../store/features/cart/selectors";
-import { cartSlice } from "../../store/features/cart";
+import { selectDishAmountById } from "@/store/features/cart/selectors";
+import { cartSlice } from "@/store/features/cart";
 
 export const DishContainer = ({ dish, ...props }) => {
   const amount = useSelector((state) => selectDishAmountById(state, dish?.id));
