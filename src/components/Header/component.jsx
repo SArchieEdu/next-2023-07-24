@@ -11,7 +11,8 @@ export const Header = ({ className }) => {
       <Link href="/">
         Home
       </Link>
-      <Link href={"restaurants"}>Restaurants</Link>
+      <Link href={"/restaurants"}>Restaurants</Link>
+      <Link href={"/cart"}>Cart</Link>
       {/* <Link to="/dishes">Dishes</Link> */}
     </header>
   );

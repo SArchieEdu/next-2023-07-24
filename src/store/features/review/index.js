@@ -1,6 +1,5 @@
 import { createSlice, createEntityAdapter } from "@reduxjs/toolkit";
 import { createReview } from "./thunks/create-review";
-import { loadReviewsByRestaurantIfNotExist } from "./thunks/load-reveiws-by-restaurant";
 
 const reviewEntityAdapter = createEntityAdapter();
 

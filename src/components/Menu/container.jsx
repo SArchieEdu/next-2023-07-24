@@ -1,4 +1,7 @@
 import { fetchRestaurantDishs } from "@/services/api";
+import { DishContainer } from "../Dish/container";
+
+import styles from "./styles.module.css";
 
 export default async function MenuContainer({restaurantId}){
   const dishes = await fetchRestaurantDishs(restaurantId);
@@ -12,7 +15,7 @@ export default async function MenuContainer({restaurantId}){
     <h3>Menu</h3>
     <div>
       {dishes.map((dish) => (
-        <div key={dish.id}>{dish.name}</div>
+        <DishContainer key={dish.id} dish={dish} className={styles.dish}>{dish.name}</DishContainer>
       ))}
     </div>
   </div>

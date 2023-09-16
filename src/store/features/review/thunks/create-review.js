@@ -1,5 +1,5 @@
-import { restaurantSlice } from "../../restaurant";
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import { restaurantSlice } from "../../restaurant";
 
 export const createReview = createAsyncThunk(
   "review/createReview",
