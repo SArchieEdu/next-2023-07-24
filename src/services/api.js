@@ -42,12 +42,6 @@ export async function fetchAllDishs() {
   return await response.json();
 }
 
-export async function fetchDishById() {
-  
-}
-
-
-
 export async function fetchRestaurantReviews(restaurantId) {
   const response = await fetch(`http://localhost:3001/api/reviews?restaurantId=${restaurantId}`);
 

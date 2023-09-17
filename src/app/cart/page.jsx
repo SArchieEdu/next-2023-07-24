@@ -1,11 +1,11 @@
-import { Cart } from "@/components/Cart/container";
+import { CartContainer } from "@/components/Cart/container";
 import { fetchAllDishs } from "@/services/api";
 // import Image from "next/image";
 
 export default async function CartPage() {
   const dishes = await fetchAllDishs();
   return (
-    <div><Cart dishes={dishes}/></div>
+    <div><CartContainer dishes={dishes}/></div>
   );
 }
 
