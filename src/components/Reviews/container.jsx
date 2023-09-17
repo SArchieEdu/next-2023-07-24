@@ -1,15 +1,11 @@
-import { useParams } from "react-router-dom";
-import { useGetReviewsQuery } from "../../store/services/api";
+import { fetchRestaurantReviews } from "@/services/api";
 import { Reviews } from "./component";
 
-export const ReviewsContainer = () => {
-  const {restaurantId} = useParams();
-  const { data: reviews, isLoading } = useGetReviewsQuery(restaurantId, {
-    skip: !restaurantId,
-  });
+export default async function ReviewsContainer({restaurantId}){
+  const reviews = await fetchRestaurantReviews(restaurantId)
 
-  if (isLoading) {
-    return <span>Loading....</span>;
+  if(!reviews?.length) {
+    return null;
   }
 
   return <Reviews reviews={reviews} restaurantId={restaurantId} />;
