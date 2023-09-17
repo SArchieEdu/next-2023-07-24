@@ -1,13 +1,21 @@
-import { Dish } from "@/components/Dish/component";
 
 import styles from "./styles.module.css";
-import { Provider } from "@/components/Provider/component";
-import { fetchRestaurants } from "@/services/api";
+import { fetchRestaurant } from "@/services/api";
+import MenuContainer from "@/components/Menu/container";
+import ReviewsContainer from "@/components/Reviews/container";
 
 export default async function RestaurantPage({ params: { restaurantId } }) {
-  const restaurants = await fetchRestaurants();
+  const restaurant = await fetchRestaurant(restaurantId);
 
-  const restaurant = restaurants.find(({ id }) => id === restaurantId);
-
-  return <div className={styles.root}>{restaurant?.name}</div>;
+  return (
+  <div>
+    <div className={styles.root}>{restaurant?.name}</div>
+    <MenuContainer restaurantId={restaurantId}/>
+    <ReviewsContainer restaurantId={restaurantId}/>
+  </div>
+  );
 }
+
+
+
+// return <div className={styles.root}>{restaurant?.name}</div>;

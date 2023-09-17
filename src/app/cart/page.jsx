@@ -1,14 +1,18 @@
-import Image from "next/image";
+import { CartContainer } from "@/components/Cart/container";
+import { fetchAllDishs } from "@/services/api";
+// import Image from "next/image";
 
-export default function CartPage() {
+export default async function CartPage() {
+  const dishes = await fetchAllDishs();
   return (
-    <div>
-      <Image
+    <div><CartContainer dishes={dishes}/></div>
+  );
+}
+
+
+{/* <Image
         src="/vercel.svg"
         width={500}
         height={500}
         alt="Picture of the author"
-      />
-    </div>
-  );
-}
+      /> */}
